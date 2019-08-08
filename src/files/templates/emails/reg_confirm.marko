@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang='${input.lang}'>
+  <head>
+    <meta charset="UTF-8">
+    <title>${input.t('title')}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400&amp;subset=cyrillic" rel="stylesheet">
+    <style>
+      /* latin */
+      /*@font-face {*/
+      /*  font-family: 'IBM Plex Sans';*/
+      /*  font-style: normal;*/
+      /*  font-weight: 400;*/
+      /*  src: local('IBM Plex Sans'), local('IBMPlexSans'), url(https://fonts.gstatic.com/s/ibmplexsans/v6/zYXgKVElMYYaJe8bpLHnCwDKhdHeFQ.woff2) format('woff2');*/
+      /*  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;*/
+      /*}*/
+      body {
+        margin: 0;
+        font-family: sans-serif;
+        font-size: 15px;
+        background-color: #dddddd;
+      }
+
+      p {
+        margin: 0;
+        margin-bottom: 15px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #536DFE;
+        font-weight: 700;
+        font-size: 16px;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto 50px;
+        background-color: #fff;
+        padding: 30px;
+        line-height: 22px;
+      }
+
+      .logo {
+        font-family: 'IBM Plex Sans', sans-serif;
+        max-width: 100%;
+        padding: 10px 0 50px;
+        text-align: center;
+        font-size: 30px;
+      }
+
+      .logo i {
+        color: #f86656;
+      }
+
+      .password {
+        margin: 20px 0;
+      }
+
+      .activate {
+        text-decoration: none;
+        color: #fff !important;
+        background: #536DFE;
+        display: block;
+        padding: 20px;
+        text-align: center;
+        font-weight: 500;
+        font-size: 18px;
+        text-transform: uppercase;
+        border-radius: 10px;
+        margin: 20px auto;
+        max-width: 480px;
+      }
+
+      .footer {
+        margin-top: 30px;
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class='container'>
+      <div class='logo'>
+        ${input.t('title')}<i>.</i>
+      </div>
+      <div class='text'>
+        <p><b>${input.t('emails.confirm.hi')} ${input.fullName},</b></p>
+        <p>${input.t('emails.confirm.welcome')}</p>
+        <a class='activate' href='${input.link}' target='_blank'>${input.t('emails.confirm.activate')}</a>
+        <p>${input.t('emails.confirm.received_by_mistake')}</p>
+        <p>${input.t('emails.confirm.link_not_work')}</p>
+        <a href='${input.link}' target='_blank'>${input.link}</a>
+        <if(input.userType === "student")>
+          <p class='password'><b>${input.t('password')}: ${input.password}</b></p>
+        </if>
+        <p class='footer'>
+          ${input.t('emails.confirm.questions')}
+          <a href='mailto:contact@${input.domain}'>contact@${input.domain}</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

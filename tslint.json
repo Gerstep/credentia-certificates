@@ -1,0 +1,26 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:recommended"],
+  "jsRules": {},
+  "rules": {
+    "max-classes-per-file": false,
+    "ordered-imports": false,
+    "member-access": [true, "no-public"],
+    "no-angle-bracket-type-assertion": false,
+    "whitespace": false,
+    "trailing-comma": false,
+    "import-spacing": false,
+    "quotemark": [true, "single", "jsx-double", "avoid-escape", "avoid-template"],
+    "arrow-parens": [true, "ban-single-arg-parens"],
+    "object-literal-sort-keys": false,
+    "no-console": false,
+    "interface-over-type-literal": false,
+    "semicolon": [true, "always", "strict-bound-class-methods"],
+    "variable-name": [true, "ban-keywords"],
+    "object-literal-key-quotes": [true, "as-needed"]
+  },
+  "rulesDirectory": [],
+  "linterOptions": {
+    "exclude": ["bin", "build", "config", ".coverage", "node_modules", ".build"]
+  }
+}
